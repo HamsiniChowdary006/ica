@@ -10,8 +10,9 @@ __pycache__/
 venv/
 .pytest_cache/
 
-# Generated runs (keep one curated sample in sample_output/ instead)
+# Generated runs
 output/
+funnel.json
 
 # OS / editor
 .DS_Store

@@ -222,6 +222,32 @@ def is_social_url(url):
     return any(host == domain or host.endswith("." + domain) for domain in SOCIAL_DOMAINS)
 
 
+def normalize_url_value(url):
+    if isinstance(url, bytes):
+        url = url.decode("utf-8", errors="ignore")
+    if url is None:
+        return None
+    if not isinstance(url, str):
+        return str(url).strip()
+    return url.strip()
+
+
+def candidate_url(candidate):
+    url = normalize_url_value(candidate.get("url"))
+    if url:
+        return url
+    entry = candidate.get("_entry") or {}
+    return normalize_url_value(entry.get("link") or entry.get("url"))
+
+
+def validate_url(url):
+    url = normalize_url_value(url)
+    if not url:
+        return None, "missing url"
+    if not url.startswith("http://") and not url.startswith("https://"):
+        return None, "invalid URL"
+    return url, None
+
 FAILURE_CATEGORIES = (
     "robots.txt disallowed",
     "HTTP 403/blocked",
@@ -277,6 +303,8 @@ def build_failure_summary(fetch_failures, google_unresolved_count=0):
 
 def resolve_link(source_name, entry):
     link = entry.get("link", "")
+    if not link:
+        link = entry.get("url", "")
     if source_name == "Bing News":
         real = parse_qs(urlparse(link).query).get("url")
         if real:
@@ -792,6 +820,65 @@ def llm_summary(title, text):
 
 
 # --------------------------------------------------------------------------- Pipeline
+FUNNEL_STAGES = (
+    "discovered",
+    "after_date_filter",
+    "after_dedupe",
+    "after_keyword_relevance_filter",
+    "url_valid",
+    "decode_resolve_ok",
+    "fetch_ok",
+    "text_200",
+    "relevant_after_extraction",
+    "kept",
+)
+
+
+def funnel_source(candidate):
+    return candidate.get("feed") or candidate.get("source") or "unknown"
+
+
+def add_funnel_record(funnel, source):
+    if source not in funnel:
+        funnel[source] = {
+            "counts": {stage: 0 for stage in FUNNEL_STAGES},
+            "drop_reasons": {},
+            "examples": {},
+        }
+    return funnel[source]
+
+
+def add_funnel_drop(funnel, source, stage, reason, title="", url=""):
+    record = add_funnel_record(funnel, source)
+    record["drop_reasons"].setdefault(stage, Counter())
+    record["drop_reasons"][stage][reason] += 1
+    example_key = f"{stage}: {reason}"
+    examples = record["examples"].setdefault(example_key, [])
+    if len(examples) < 5:
+        normalized_url = normalize_url_value(url)
+        examples.append({
+            "title": title,
+            "url": normalized_url,
+            "url_type": type(url).__name__,
+            "url_repr": repr(url),
+            "reason": reason,
+        })
+
+
+def serialize_funnel(funnel):
+    return {
+        source: {
+            "counts": record["counts"],
+            "drop_reasons": {
+                stage: dict(reasons)
+                for stage, reasons in record["drop_reasons"].items()
+            },
+            "examples": record["examples"],
+        }
+        for source, record in sorted(funnel.items())
+    }
+
+
 def run(topic, limit, days, use_llm, progress=None):
     session = make_session()
     status = {}
@@ -801,18 +888,41 @@ def run(topic, limit, days, use_llm, progress=None):
     log.info("Discovering '%s' across %d sources...", topic, len(SEARCH_SOURCES) + len(PUBLISHER_FEEDS))
     cands = discover(session, topic, days, status)
 
+    funnel = {}
+    for name, details in status.items():
+        add_funnel_record(funnel, name)
+        candidate_count = details.get("candidates", 0)
+        kept_count = details.get("kept", candidate_count)
+        funnel[name]["counts"]["discovered"] = candidate_count
+        funnel[name]["counts"]["after_keyword_relevance_filter"] = kept_count
+        if candidate_count > kept_count:
+            add_funnel_record(funnel, name)
+            funnel[name]["drop_reasons"].setdefault(
+                "after_keyword_relevance_filter", Counter()
+            )["keyword filter"] += candidate_count - kept_count
+
     # date filter (undated items are kept but flagged) + dedupe
     seen_urls, seen_titles, fresh = set(), [], []
     for c in cands:
+        source = funnel_source(c)
+        add_funnel_record(funnel, source)
         if c["published_at"] and c["published_at"] < cutoff:
+            add_funnel_drop(funnel, source, "after_date_filter", "outside date window",
+                            c["title"], c["url"])
             continue
         if not c["title"] or not c["url"]:
+            add_funnel_drop(funnel, source, "after_date_filter",
+                            "missing title or URL", c.get("title", ""), c.get("url", "") or "")
             continue
         if is_duplicate(c["title"], c["url"], set(), seen_titles) or norm_url(c["url"]) in seen_urls:
+            add_funnel_drop(funnel, source, "after_dedupe", "duplicate",
+                            c["title"], c["url"])
             continue
         seen_urls.add(norm_url(c["url"]))
         seen_titles.append(norm_title(c["title"]))
         fresh.append(c)
+        funnel[source]["counts"]["after_date_filter"] += 1
+        funnel[source]["counts"]["after_dedupe"] += 1
     log.info("%d candidates after date filter and de-duplication", len(fresh))
 
     articles, backups, failures = [], [], []
@@ -838,13 +948,19 @@ def run(topic, limit, days, use_llm, progress=None):
     for c in round_robin(fresh):
         if len(articles) >= limit or attempts >= max_attempts:
             break
+        source = funnel_source(c)
+        add_funnel_record(funnel, source)
         if c["feed"] == "Google News":
-            url = decode_google_url(c["url"], google_decode_state)
+            url = decode_google_url(candidate_url(c), google_decode_state)
             if not url:
                 google_unresolved += 1
+                add_funnel_drop(funnel, source, "decode_resolve_ok",
+                                "google redirect not resolved", c["title"], c["url"])
                 continue
         else:
-            url = resolve_link(c["feed"], c["_entry"])
+            url = candidate_url(c)
+            if c["feed"] == "Bing News":
+                url = resolve_link(c["feed"], c["_entry"]) or url
 
         if c["feed"] == "Bing News":
             url, bing_resolved = resolve_bing_link(session, url)
@@ -852,7 +968,11 @@ def run(topic, limit, days, use_llm, progress=None):
                 bing_resolved_count += 1
             else:
                 bing_unresolved_count += 1
+                add_funnel_drop(funnel, source, "decode_resolve_ok",
+                                "bing URL unresolved", c["title"], c["url"])
+                continue
         attempts += 1
+        funnel[source]["counts"]["decode_resolve_ok"] += 1
 
         flags = []
         if c.get("_full_text"):
@@ -861,18 +981,28 @@ def run(topic, limit, days, use_llm, progress=None):
             else:
                 flags.append("full text from feed")
 
+        url, url_error = validate_url(url)
+        if url_error:
+            add_funnel_drop(funnel, source, "url_valid", url_error,
+                            c["title"], c["url"])
+            continue
+        funnel[source]["counts"]["url_valid"] += 1
         candidate_host = host_from_url(url)
         if is_social_url(url):
             reason = "social domain"
             log.info("%s: skipped %s", candidate_host or "unknown", reason)
             failures.append({"source": c["source"], "url": url, "error": reason})
             skipped_headline_or_blocked += 1
+            add_funnel_drop(funnel, source, "url_valid", reason,
+                            c["title"], c["url"])
             continue
         if candidate_host == "news.google.com":
             reason = "google redirect not resolved"
             log.info("%s: skipped %s", candidate_host, reason)
             failures.append({"source": c["source"], "url": url, "error": reason})
             skipped_headline_or_blocked += 1
+            add_funnel_drop(funnel, source, "decode_resolve_ok", reason,
+                            c["title"], c["url"])
             continue
 
         full_text = c.get("_full_text")
@@ -880,6 +1010,7 @@ def run(topic, limit, days, use_llm, progress=None):
             text = full_text
             final_url = url
             err = None
+            funnel[source]["counts"]["fetch_ok"] += 1
         else:
             time.sleep(REQUEST_DELAY)
             text, final_url, err = fetch_article(session, url)
@@ -888,12 +1019,23 @@ def run(topic, limit, days, use_llm, progress=None):
                 failures.append({"source": c["source"], "url": final_url, "error": err})
                 skipped_headline_or_blocked += 1
                 log.info("%s: fetch failed: %s", host_from_url(final_url) or "unknown", err)
+                add_funnel_drop(funnel, source, "fetch_ok", err,
+                                c["title"], final_url)
+            else:
+                funnel[source]["counts"]["fetch_ok"] += 1
         if is_duplicate(c["title"], final_url, kept_urls, kept_titles):
+            add_funnel_drop(funnel, source, "after_dedupe", "duplicate within kept articles",
+                            c["title"], final_url)
             continue
         if c.get("_full_text"):
             body = clean_html(text) if text else None
         else:
             body = clean_html(text) if text and len(clean_html(text)) >= 200 else None
+        if body and len(body) >= 200:
+            funnel[source]["counts"]["text_200"] += 1
+        elif text:
+            add_funnel_drop(funnel, source, "text_200", "text shorter than 200 chars",
+                            c["title"], final_url)
         excerpt_only = False
         if not body:
             if text:
@@ -910,10 +1052,15 @@ def run(topic, limit, days, use_llm, progress=None):
         if not body or len(body) < 40:
             report(f"skip (no usable text): {c['title'][:70]}")
             log.info("%s: skipped no usable text", candidate_host or "unknown")
+            add_funnel_drop(funnel, source, "text_200", "no usable text",
+                            c["title"], final_url)
             continue
         if not is_relevant(topic, c["title"], body + " " + c["snippet"]):
             report(f"skip (off-topic): {c['title'][:70]}")
+            add_funnel_drop(funnel, source, "relevant_after_extraction", "off-topic",
+                            c["title"], final_url)
             continue
+        funnel[source]["counts"]["relevant_after_extraction"] += 1
         if not c["published_at"]:
             flags.append("published_at missing")
 
@@ -949,6 +1096,11 @@ def run(topic, limit, days, use_llm, progress=None):
             break
         articles.append(b)
 
+    for article in articles:
+        source = article["discovered_via"] or article["source"]
+        add_funnel_record(funnel, source)
+        funnel[source]["counts"]["kept"] += 1
+
     if bing_resolved_count or bing_unresolved_count:
         log.info("Bing News: resolved %d candidates, unresolved %d candidates",
                  bing_resolved_count, bing_unresolved_count)
@@ -966,10 +1118,17 @@ def run(topic, limit, days, use_llm, progress=None):
     if len(sources_used) < 2:
         notes.append("Fewer than two distinct publishers contributed results.")
     failure_summary = build_failure_summary(failures, google_unresolved)
+    serialized_funnel = serialize_funnel(funnel)
+    for source, record in serialized_funnel.items():
+        for example_key, examples in record["examples"].items():
+            if examples:
+                for example in examples:
+                    log.info("Funnel skip [%s / %s] title=%s url=%s",
+                             source, example_key, example["title"], example["url"])
     return {"topic": topic, "generated_at": now.isoformat(), "window_days": days,
             "requested_limit": limit, "article_count": len(articles),
             "publishers": sources_used, "notes": notes, "source_status": status, "fetch_failures": failures,
-            "failure_summary": failure_summary,
+            "failure_summary": failure_summary, "funnel": serialized_funnel,
             "articles": articles}
 
 
@@ -1043,6 +1202,8 @@ def main():
     ap.add_argument("--out", default="output", help="output directory")
     ap.add_argument("--llm", action="store_true",
                     help="optional: summarize with Claude (needs ANTHROPIC_API_KEY); default is non-LLM")
+    ap.add_argument("--funnel-json", action="store_true",
+                    help="write the candidate funnel to funnel.json")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args()
 
@@ -1057,6 +1218,9 @@ def main():
         sys.exit("--limit must be >= 1")
 
     result = run(topic, args.limit, args.days, args.llm)
+    if args.funnel_json:
+        with open("funnel.json", "w", encoding="utf-8") as funnel_file:
+            json.dump(result["funnel"], funnel_file, indent=2, ensure_ascii=False)
     base = write_outputs(result, args.out)
     print(f"\nDone: {result['article_count']} articles from {len(result['publishers'])} publishers.")
     for n in result["notes"]:
@@ -1086,6 +1250,41 @@ def main():
         used = articles_used.get(source, 0)
         error = details.get("error", "")
         print(f"{source[:28]:<28} {state:<8} {candidates:<10} {kept:<8} {used:<13} {error}")
+    print("\nCandidate funnel:")
+    print(f"{'Source':<28} {'Disc':>5} {'Date':>5} {'Dedup':>6} {'Keyword':>8} "
+          f"{'URL':>5} {'Resolve':>8} {'Fetch':>6} {'Text200':>8} {'Relevant':>9} {'Kept':>5}")
+    print("-" * 105)
+    for source, record in result["funnel"].items():
+        counts = record["counts"]
+        print(
+            f"{source[:28]:<28} "
+            f"{counts['discovered']:>5} "
+            f"{counts['after_date_filter']:>5} "
+            f"{counts['after_dedupe']:>6} "
+            f"{counts['after_keyword_relevance_filter']:>8} "
+            f"{counts['url_valid']:>5} "
+            f"{counts['decode_resolve_ok']:>8} "
+            f"{counts['fetch_ok']:>6} "
+            f"{counts['text_200']:>8} "
+            f"{counts['relevant_after_extraction']:>9} "
+            f"{counts['kept']:>5}"
+        )
+        drop_reasons = []
+        for stage, reasons in record["drop_reasons"].items():
+            for reason, count in reasons.items():
+                drop_reasons.append(f"{stage}: {reason} ({count})")
+        if drop_reasons:
+            print(f"  drops: {'; '.join(drop_reasons)}")
+    print("\nURL drop diagnostics (first 5 per source/reason):")
+    for source, record in result["funnel"].items():
+        for example_key, examples in record["examples"].items():
+            if not example_key.startswith("url_valid:"):
+                continue
+            for example in examples:
+                print(
+                    f"{source}: type(url)={example['url_type']} "
+                    f"repr(url)={example['url_repr']} reason={example['reason']}"
+                )
     print(f"Files: {base}.json | .csv | .md")
 
 

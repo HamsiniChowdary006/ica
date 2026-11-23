@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 Requires Python 3.9+.
 
-Optional keys: `cp _.env.example .env` and add the keys you need. `.env` is git-ignored, so secrets are never committed.
+Optional keys: `cp .env.example .env` and add the keys you need. `.env` is git-ignored, so secrets are never committed.
 
 ## Tests
 

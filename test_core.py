@@ -3,7 +3,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from main import (
     norm_url, is_duplicate, is_relevant, extractive_summary, sentences,
     discover_guardian, parse_gdelt_payload, topic_tokens, decode_google_url,
-    expand_topic_query, discover,
+    expand_topic_query, discover, validate_url, normalize_url_value, candidate_url,
 )
 from unittest.mock import Mock
 import main
@@ -137,3 +137,54 @@ def test_google_circuit_breaker_sleeps_retries_then_stops(monkeypatch):
     assert decoded is None
     assert state["stopped"] is True
     assert 3 in sleeps
+
+
+def test_https_candidate_passes_url_stage():
+    url, error = validate_url("https://example.com/a")
+    assert url == "https://example.com/a"
+    assert error is None
+
+
+def test_bytes_url_decodes_and_passes():
+    url = normalize_url_value(b"https://example.com/a")
+    validated, error = validate_url(url)
+    assert validated == "https://example.com/a"
+    assert error is None
+
+
+def test_empty_or_none_urls_have_missing_url_reason():
+    assert validate_url("") == (None, "missing url")
+    assert validate_url(None) == (None, "missing url")
+
+
+def test_feed_entry_link_only_produces_candidate(monkeypatch):
+    from types import SimpleNamespace
+
+    monkeypatch.setattr(main, "SEARCH_SOURCES", {})
+    monkeypatch.setattr(main, "PUBLISHER_FEEDS", {"Test Feed": "https://example.com/feed"})
+    monkeypatch.setattr(main, "discover_guardian", lambda *_args: ([], "GUARDIAN_API_KEY not set"))
+    monkeypatch.setattr(main, "discover_hacker_news", lambda *_args: ([], None))
+    monkeypatch.setattr(main, "discover_gdelt", lambda *_args: ([], None))
+    monkeypatch.setattr(main, "fetch_feed", lambda *_args: SimpleNamespace(entries=[{
+        "title": "AI regulation update",
+        "summary": "AI regulation summary",
+        "link": "https://example.com/article",
+    }]))
+
+    candidates = discover(Mock(), "AI regulation", 7, {})
+    assert candidate_url(candidates[0]) == "https://example.com/article"
+
+
+def test_google_bing_gdelt_hn_shapes_pass_url_stage():
+    shapes = [
+        {"url": "https://news.google.com/rss/articles/1", "_entry": {}},
+        {"url": "https://www.bing.com/ck/a?u=https://example.com/a", "_entry": {}},
+        {"url": "https://example.com/gdelt", "_entry": {}},
+        {"url": "https://example.com/hacker-news", "_entry": {}},
+        {"_entry": {"link": "https://example.com/feed-link"}},
+    ]
+    for candidate in shapes:
+        url = candidate_url(candidate)
+        validated, error = validate_url(url)
+        assert validated
+        assert error is None
