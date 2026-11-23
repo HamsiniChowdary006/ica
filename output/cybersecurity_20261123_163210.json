@@ -1,0 +1,462 @@
+{
+  "topic": "cybersecurity",
+  "generated_at": "2026-11-23T10:59:58.424543+00:00",
+  "window_days": 7,
+  "requested_limit": 8,
+  "article_count": 1,
+  "publishers": [
+    "The Verge"
+  ],
+  "notes": [
+    "Only 1 qualifying articles were found in the past 7 days (target: 8). Sources may be sparse for this topic, blocked, or failed; see source_status. Skipped 39 articles for headline-only or blocked content.",
+    "Fewer than two distinct publishers contributed results."
+  ],
+  "source_status": {
+    "Guardian Open Platform": {
+      "ok": false,
+      "candidates": 0,
+      "kept": 0,
+      "error": "GUARDIAN_API_KEY not set"
+    },
+    "Hacker News": {
+      "ok": true,
+      "candidates": 21,
+      "kept": 21
+    },
+    "GDELT": {
+      "ok": true,
+      "candidates": 50,
+      "kept": 50
+    },
+    "Google News": {
+      "ok": true,
+      "candidates": 100,
+      "kept": 100
+    },
+    "Bing News": {
+      "ok": true,
+      "candidates": 0,
+      "kept": 0
+    },
+    "BBC News": {
+      "ok": true,
+      "candidates": 32,
+      "kept": 0
+    },
+    "BBC Technology": {
+      "ok": true,
+      "candidates": 21,
+      "kept": 0
+    },
+    "BBC Business": {
+      "ok": true,
+      "candidates": 50,
+      "kept": 0
+    },
+    "BBC Science and Environment": {
+      "ok": true,
+      "candidates": 42,
+      "kept": 0
+    },
+    "BBC Politics": {
+      "ok": true,
+      "candidates": 60,
+      "kept": 0
+    },
+    "BBC World": {
+      "ok": true,
+      "candidates": 35,
+      "kept": 0
+    },
+    "The Guardian": {
+      "ok": true,
+      "candidates": 45,
+      "kept": 0
+    },
+    "The Guardian Technology": {
+      "ok": true,
+      "candidates": 31,
+      "kept": 0
+    },
+    "The Guardian Business": {
+      "ok": true,
+      "candidates": 40,
+      "kept": 0
+    },
+    "The Guardian Environment": {
+      "ok": true,
+      "candidates": 25,
+      "kept": 0
+    },
+    "The Guardian Politics": {
+      "ok": true,
+      "candidates": 21,
+      "kept": 0
+    },
+    "The Guardian Science": {
+      "ok": true,
+      "candidates": 27,
+      "kept": 0
+    },
+    "The Guardian World": {
+      "ok": true,
+      "candidates": 45,
+      "kept": 0
+    },
+    "NPR": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "NPR Technology": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "NPR Politics": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "NPR Science": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 1
+    },
+    "NPR Business": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "Al Jazeera": {
+      "ok": true,
+      "candidates": 25,
+      "kept": 0
+    },
+    "TechCrunch": {
+      "ok": true,
+      "candidates": 20,
+      "kept": 0
+    },
+    "Ars Technica": {
+      "ok": true,
+      "candidates": 20,
+      "kept": 0
+    },
+    "The Hacker News": {
+      "ok": true,
+      "candidates": 50,
+      "kept": 8
+    },
+    "Wired": {
+      "ok": true,
+      "candidates": 50,
+      "kept": 0
+    },
+    "The Verge": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 1
+    },
+    "MIT Technology Review": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "VentureBeat": {
+      "ok": false,
+      "candidates": 0,
+      "kept": 0,
+      "error": "HTTPSConnectionPool(host='venturebeat.com', port=443): Max retries exceeded with url: /feed/ (Caused by ResponseError('too many 429 error responses'))"
+    },
+    "CNBC Tech": {
+      "ok": true,
+      "candidates": 30,
+      "kept": 1
+    },
+    "Sky News": {
+      "ok": true,
+      "candidates": 5,
+      "kept": 0
+    },
+    "DW": {
+      "ok": true,
+      "candidates": 139,
+      "kept": 0
+    },
+    "France 24": {
+      "ok": true,
+      "candidates": 24,
+      "kept": 0
+    },
+    "ABC Australia": {
+      "ok": true,
+      "candidates": 25,
+      "kept": 0
+    },
+    "BleepingComputer": {
+      "ok": true,
+      "candidates": 15,
+      "kept": 1
+    },
+    "Engadget": {
+      "ok": true,
+      "candidates": 20,
+      "kept": 0
+    },
+    "The Independent": {
+      "ok": true,
+      "candidates": 26,
+      "kept": 0
+    }
+  },
+  "fetch_failures": [
+    {
+      "source": "BleepingComputer",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "CNBC Tech",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "The Hacker News",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "abc.net.au",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "bbc.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "bleepingcomputer.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "caslab.io",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "eff.org",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "en.yna.co.kr",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "github.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "independent.co.uk",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "mkultraman.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "nytimes.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "oag.ca.gov",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "openletter.earth",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "resumefitting.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "reuters.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "stackbuilders.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "strategyofsecurity.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "virginplus.ca",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "960weli.iheart.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "aa.com.tr",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "newsradio1170.iheart.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "pressherald.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "punchng.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "stepstone.de",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "theglobeandmail.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "thenational.com.pg",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "twincitiesnewstalk.iheart.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "vietnamnet.vn",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "wsfcam.iheart.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "The Hacker News",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "nytimes.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "The Hacker News",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "The Hacker News",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "The Hacker News",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "The Hacker News",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "The Hacker News",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "The Hacker News",
+      "url": "",
+      "error": "invalid url"
+    }
+  ],
+  "failure_summary": {
+    "robots.txt disallowed": {
+      "count": 0,
+      "top_domains": []
+    },
+    "HTTP 403/blocked": {
+      "count": 0,
+      "top_domains": []
+    },
+    "HTTP other / timeout": {
+      "count": 39,
+      "top_domains": [
+        {
+          "domain": "unknown",
+          "count": 39
+        }
+      ]
+    },
+    "google redirect not resolved": {
+      "count": 93,
+      "top_domains": [
+        {
+          "domain": "news.google.com",
+          "count": 93
+        }
+      ]
+    },
+    "headline-only": {
+      "count": 0,
+      "top_domains": []
+    },
+    "social domain": {
+      "count": 0,
+      "top_domains": []
+    }
+  },
+  "articles": [
+    {
+      "title": "We haven’t seen the last of the major tech outages",
+      "source": "The Verge",
+      "url": null,
+      "published_at": "2026-11-22T22:48:02+00:00",
+      "retrieved_at": "2026-11-23T11:00:43.621080+00:00",
+      "excerpt": "Over the last week or so, we have seen a nationwide FAA ground stop, a multi-day Outlook outage that brought entire companies to a standstill, and a banking outage at JPMorgan Chase . But the consensus is that there are more to come . Director of National Intelligence Jay Clayton told CNN : \"The American people should be prepared for a great deal of investment in upgrading our systems; they should be prepared for investment in cybersecurity, and they should be prepared that any time there is a step change in technology, a step change in both compute and applications, there will be bumps in the road.\" Microsoft President Brad Smith issued a  … Read the full story at The Verge.",
+      "summary": "Over the last week or so, we have seen a nationwide FAA ground stop, a multi-day Outlook outage that brought entire companies to a standstill, and a banking outage at JPMorgan Chase . Director of National Intelligence Jay Clayton told CNN : \"The American people should be prepared for a great deal of investment in upgrading our systems; they should be prepared for investment in cybersecurity, and they should be prepared that any time there is a step change in technology, a step change in both compute and applications, there will be bumps in the road. Microsoft President Brad Smith issued a … Read the full story at The Verge.",
+      "summary_method": "extractive",
+      "discovered_via": "The Verge",
+      "flags": [
+        "full text from feed"
+      ]
+    }
+  ]
+}

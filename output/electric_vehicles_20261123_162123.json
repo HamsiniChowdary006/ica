@@ -1,0 +1,158 @@
+{
+  "topic": "electric vehicles",
+  "generated_at": "2026-11-23T10:49:47.029264+00:00",
+  "window_days": 7,
+  "requested_limit": 8,
+  "article_count": 0,
+  "publishers": [],
+  "notes": [
+    "Only 0 qualifying articles were found in the past 7 days (target: 8). Sources may be sparse for this topic, blocked, or failed; see source_status. Skipped 1 articles for headline-only or blocked content.",
+    "Fewer than two distinct publishers contributed results."
+  ],
+  "source_status": {
+    "Guardian Open Platform": {
+      "ok": false,
+      "error": "GUARDIAN_API_KEY not set"
+    },
+    "Hacker News": {
+      "ok": true,
+      "candidates": 0
+    },
+    "GDELT": {
+      "ok": false,
+      "error": "HTTP unknown: HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Max retries exceeded with url: /api/v2/doc/doc?query=electri"
+    },
+    "Google News": {
+      "ok": true,
+      "candidates": 100
+    },
+    "Bing News": {
+      "ok": true,
+      "candidates": 2
+    },
+    "BBC News": {
+      "ok": true,
+      "candidates": 0
+    },
+    "BBC Technology": {
+      "ok": true,
+      "candidates": 0
+    },
+    "BBC Business": {
+      "ok": true,
+      "candidates": 0
+    },
+    "The Guardian": {
+      "ok": true,
+      "candidates": 0
+    },
+    "The Guardian Technology": {
+      "ok": true,
+      "candidates": 0
+    },
+    "NPR": {
+      "ok": true,
+      "candidates": 0
+    },
+    "Al Jazeera": {
+      "ok": true,
+      "candidates": 0
+    },
+    "TechCrunch": {
+      "ok": true,
+      "candidates": 0
+    },
+    "Ars Technica": {
+      "ok": true,
+      "candidates": 0
+    },
+    "The Hacker News": {
+      "ok": true,
+      "candidates": 0
+    },
+    "Wired": {
+      "ok": true,
+      "candidates": 0
+    },
+    "The Verge": {
+      "ok": true,
+      "candidates": 0
+    },
+    "CNBC Tech": {
+      "ok": true,
+      "candidates": 0
+    },
+    "Sky News": {
+      "ok": true,
+      "candidates": 0
+    },
+    "DW": {
+      "ok": true,
+      "candidates": 0
+    },
+    "France 24": {
+      "ok": true,
+      "candidates": 0
+    },
+    "ABC Australia": {
+      "ok": true,
+      "candidates": 0
+    },
+    "BleepingComputer": {
+      "ok": true,
+      "candidates": 0
+    },
+    "Engadget": {
+      "ok": true,
+      "candidates": 0
+    },
+    "The Independent": {
+      "ok": true,
+      "candidates": 0
+    }
+  },
+  "fetch_failures": [
+    {
+      "source": "Bing News",
+      "url": "",
+      "error": "invalid url"
+    }
+  ],
+  "failure_summary": {
+    "robots.txt disallowed": {
+      "count": 0,
+      "top_domains": []
+    },
+    "HTTP 403/blocked": {
+      "count": 0,
+      "top_domains": []
+    },
+    "HTTP other / timeout": {
+      "count": 1,
+      "top_domains": [
+        {
+          "domain": "unknown",
+          "count": 1
+        }
+      ]
+    },
+    "google redirect not resolved": {
+      "count": 99,
+      "top_domains": [
+        {
+          "domain": "news.google.com",
+          "count": 99
+        }
+      ]
+    },
+    "headline-only": {
+      "count": 0,
+      "top_domains": []
+    },
+    "social domain": {
+      "count": 0,
+      "top_domains": []
+    }
+  },
+  "articles": []
+}

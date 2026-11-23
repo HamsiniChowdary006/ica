@@ -1,0 +1,563 @@
+{
+  "topic": "AI regulation",
+  "generated_at": "2026-11-23T10:35:24.086529+00:00",
+  "window_days": 7,
+  "requested_limit": 8,
+  "article_count": 1,
+  "publishers": [
+    "CNBC Tech"
+  ],
+  "notes": [
+    "Only 1 qualifying articles were found in the past 7 days (target: 8). Sources may be sparse for this topic, blocked, or failed; see source_status. Skipped 79 articles for headline-only or blocked content.",
+    "Fewer than two distinct publishers contributed results."
+  ],
+  "source_status": {
+    "Guardian Open Platform": {
+      "ok": false,
+      "error": "GUARDIAN_API_KEY not set"
+    },
+    "Hacker News": {
+      "ok": true,
+      "candidates": 4
+    },
+    "GDELT": {
+      "ok": false,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    "Google News": {
+      "ok": true,
+      "candidates": 100
+    },
+    "Bing News": {
+      "ok": true,
+      "candidates": 12
+    },
+    "BBC News": {
+      "ok": true,
+      "candidates": 0
+    },
+    "BBC Technology": {
+      "ok": true,
+      "candidates": 0
+    },
+    "BBC Business": {
+      "ok": true,
+      "candidates": 0
+    },
+    "The Guardian": {
+      "ok": true,
+      "candidates": 0
+    },
+    "The Guardian Technology": {
+      "ok": true,
+      "candidates": 1
+    },
+    "NPR": {
+      "ok": true,
+      "candidates": 0
+    },
+    "Al Jazeera": {
+      "ok": true,
+      "candidates": 0
+    },
+    "TechCrunch": {
+      "ok": true,
+      "candidates": 0
+    },
+    "Ars Technica": {
+      "ok": true,
+      "candidates": 0
+    },
+    "The Hacker News": {
+      "ok": true,
+      "candidates": 0
+    },
+    "Wired": {
+      "ok": true,
+      "candidates": 0
+    },
+    "The Verge": {
+      "ok": true,
+      "candidates": 0
+    },
+    "CNBC Tech": {
+      "ok": true,
+      "candidates": 1
+    },
+    "Sky News": {
+      "ok": true,
+      "candidates": 0
+    },
+    "DW": {
+      "ok": true,
+      "candidates": 0
+    },
+    "France 24": {
+      "ok": true,
+      "candidates": 0
+    },
+    "ABC Australia": {
+      "ok": true,
+      "candidates": 0
+    },
+    "BleepingComputer": {
+      "ok": true,
+      "candidates": 0
+    },
+    "Engadget": {
+      "ok": true,
+      "candidates": 0
+    },
+    "The Independent": {
+      "ok": true,
+      "candidates": 0
+    }
+  },
+  "fetch_failures": [
+    {
+      "source": "Bing News",
+      "url": "https://smefutures.com/bernie-sanders-ai-development-pause-meta-ai-chief-superintelligence-warning/",
+      "error": "blocked or paywalled (HTTP 403)"
+    },
+    {
+      "source": "ABC7 WWSB",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNZ0pKY2N6d1NnSlB4SEJQSDNodm8wcXNFeE1RR0ZzekswZmRhM0Z1T1VRV1ZUVkZHeTZfclRRRWxicEQ2Nzh4eWVObmZlN3hlanFtMDMxOUxmZ3QwdHpKbUV3eVE0bUxnd2VfQU04Tmdsb05abEkzYnRBdlFRRWhUMFZGaGJodw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQMVppTkpwTl9RaDg3enpSUG00Y1l0eXFZVkV5ODJoYjhlRVFNdkNSWkEtMnJ6NDhRaHlFVkFqcEl5T3g2R3BrbjNTVjRyaU56ZjRTd0NYTkxvX0RkWVNkVkJ6THp1M3JuWmJaNFZrVlRrS0hsVjF6U1J3M0I2aTF5dW9CV3JXckdnN3hjWDVJWUFGX1E0QzlvNWIyMTNsVm5Oa3RWMWxrckJSVzg?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "AZ Family",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZVJyNnRqenJvTHdicHlUYTNSMFhjbnJ1SFNzSTkzYmtNdEhiNHNIZF9Db2ZSQWUtTjY2SG9rcDJhQ3RkeFoxSlVaeW5udE9KSWZZeGRjWnQ3NEN1QWR5c05heUN5YjZSTllxNEQ1dERoNGJwSWFUWWQ5cFFiMHdaaFdEUGVkTVNtakhuT3BxUkRINmptamJweDJWell5Ujg?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOdHkxWkFJUEcwN0tRWHJ2YzRESThuZG5QeWx6WmxsTG8xZU1UWGoyU09xTWFKOEMtemJUZVUwbF9vQW84VTR6eDRhQ1o3Q3g3ZXVXakRPVEtEQzdLVHQ0RDlKRzhNdERneEoybEh3VDBBZGJHVUtZY2hGbktrRjhPenJuYnAwRC1Ea054bVFRdS1Tb0pnaUpFWnUySm5GMXBJQmVKdUtZelJtWFZuUTVOVNIBtgFBVV95cUxQQzJ0OE0tX0tDVVlSVjdCRmF6S0tEVXdmLVN2QTdFVGJiOGsza29SUGlUaHNrTGYyUGZqdlBSaDhBMUJTR1ZaZjFHVlhqRFdOZGEwMW5MUVBsZTdHNkV1ZmpNdXBiRi1CVHhFX0VMbS1OYWcxRmctN2NDUkZHS2ZxTWpWZG55VzlKQzloUEZnQ0tFWk1GWUlXdy1nQVNPZjFjVFpvb0c1bHM4SlA5S29QbEt2dXFvQQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Anadolu Ajansı",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQeEZaS1l1aU9DcGZYNzFvRi1yQVNHMUZuUmdIemxsRERJblhrSmZrUkM3bU8zVFhkZ0JwVnRPSG14cUV4MXNrMER4bm5PYlpaQ29wRENlVFhHUmZNVENDNmg1S1llbE8zS2hmVjVzTFkzVDFPNGlBUy1LM2ZGLVRNc0p3V0lvRVc0bUxRdzhFdWdOMDFuUzZDbU1TWkVQdFh3VzNnN0xJdzFwMmd5c1lmNlVxd3l0VlE?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Atlantic Council",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPZERNUFpYamtnSkFOcHhGTE1VZlRtTTM4aHExRi12ekVnTDFqdHRaMWdGZWUxV0F5MG5ETTVfLTFCTWlfd2Fvem9IZWVEdF9wemVrZHRFTkhiZjJaMFNVZXpFVVZGY3lIRnBxTUtveW9abHRGNDF0RUUxYnJMTWtBR3BhWW5SRjVpS0ZTR190aDRITUZkRHZDOWtndzBDSVhaeWM3Vk9tVmFHNEZhdERGbGg2bFUzdVhRblNWbFlwejQ5NHdPSWJnX1M4REtaV1RaODEzb1FR?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Axios",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1tTml4amY4MVZVR3Y3TUFzOG1Yd25zbTRrM3RneC1LeHhVSXRGSnZoSThFY3NraXpJdDdSaDhSZkZqeEI3cEhyX29FUDFyZmdvcnFvUjI1d0MzcVpNWjd5XzhDYnVZMHVjdWdhbmJoS094U3B1?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Bank of England",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOb1dlM1FHVFl4amt2Qk9nbTVMMERkVGFheXNVaGk2ajRFRVcxa21qaWJsLWdBd01YMVdoWlZvcFVEMmd0OXh4YnU2eVlUUUVNSFVWY09jNThrWEZxZ0lxNmlCaWR1V1dteFZpQmVXRGJfV3pKMkcxS09wTzktaHBjNEh2dXlQOGYxVFhkTHEwRGc0bk9ETXdQOUFQQ0VxOFJsRExLeGlfNWMtWTdBV3RQdTJFQ3oxbEg1NkJqa0F6WE91SXZwQzY0VXN5NjAwZmVhbDhUZzBPTGZCdnZuSklvclQtUTNVUUJva05UdjJzTkZHejBzV0REWnVZU0NUUmcxZUE?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "BeInCrypto",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1venBtbGFxc1J2c0FTRTBKblBkWWppdDdCTElUMzRIYWYwYWszejJjMGZwQWVZbU1Vd2NFMmZaZE5zNFhuckp6YWpHbWpGSHU4MGN2ejlrWEF4N185UWpuTHE4UENKck9qbm9MSjJEdHd2UE5PR0xv?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Bioengineer.org",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOeHBhZ3ZWUkhfeTlxb0RzeHBDVjM4S0RnQzIwTVdPMXVsVG9La1BRd01RbmtuNlYtdGZWRUZlZ3hKVmRDclpRNzN2Nl9KZGx3T2xyT29PMVhWRzlKRWtfY181TEw2MDFQSmNIQzNyYzY3eVNOTHpuc2tUOFRzZ1JsbHRIbGlWUzdfbWo4NDFRcy03TGZYTTZpUV9DMnZoUTJoMG5QMDc0YWdEQ1J3OVp4U0xRbEQtUQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPY3RyYzZEdUFiQTZ6Zk1fQ1FxRmp5alkydktDU3lnSmIxeWdCbWxHbTJ0VDduQlozVnoyaUg5a193N0tjU2F0NHhYeFhwQ3lTZnlxVjZXazVOT2VEd2d3RTc0aFVYdUt6ZGtlaHpUVi05ZmxZekFwZ1hSTmwzdHdmRVhfSTlkdEY4VzJFbDBJUFRwek1pNTV4N1Q2eEpMMEhiUFJEU284cHh5Tl9GdXhCdER3?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "BusinessLine",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQVVlMU1VwRi1uNjBNc3Btb2JCbTBNaDNiOEx1UGVxUGgxRTBCQnlyX01yYThuSlJQbXB5N2dzQXloT0FnNUNWT0tTR2hZdFJ4WDdHUTBwMkc0RTY5WVo3dGVESUdLdXpaXzloTlhQWVhhTmo3RWVlam53cXM2SzAwNTIwX28yTFlYeVd4ckR4WnBkMEZSUFJuNmtqSEtCSllvMkZUX0paVGI5YUYzMTdzdjBxUEtsUGx1Tzl5VFB5c0JYV3RaQXBXaEM1Y0hzdzJMX0RIZVNJcGwyajRiczlVX01aTzRRTFBG0gHvAUFVX3lxTE1pcGllTHBnNVZUUU8weXVVRFFMb29CaGxmUGljQUlnTVZ5RHpCMlo2OTBzWlBsdkUzeVFOcml4ZlN0MDdUeHI2bkx6cVpCcVZUdW9BZmJTelVWQUUxcDh6RFgwRG9rYlphLVJibWdieHA0LXdPRkgwLUJkNlk1REt1a3FsUWRtcnpCWlI0aWdYV1BZRjZ3bDltd0FYMGNJT0VoY3h6cFlMZjNHTzV6U202RUpCRzM2ancyVU5TNURtYlJ6NVc5Q0xxd3RELWxBdFBlWHZINDJyUzlET2sxbUw1WXlObVVTSmdWSGNnRy1j?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "CASRAI",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQUmxaVDNvaDl0NnJ3QS1Sc0QzNTB0RU04enNhVk1aOFJITDNicl9Cam5mb3N1c2h1OVhNZ2Y0b0ZYcTkxeTdsaGYxU0pjVlJFaEpwVEVlbjdKS2hWV1VQbzIzVllJR1plSUpDV3A1SFhzYm9VMnF2Y3BUSXN1aGdmQWt5QTA1TDBSbHZFVDJtQXZ1Zw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "CBC",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5rUnlrODlYd1RlQXM2TW9QOFJnNkc4X21wS2pNajJwTGJYWnhuZUpWMG55QnRzSXh2MzBieS05WDFmc1ByNklHZXVsR1FOdjc4SHZLYTA3bzNLU3liS3ZuUnpjM3VwTG9rbHZ4VW4yZEIwWHMwd0tRSTBkZw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "CEO경제신문",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9USzFVRmpuQUlLaWpWckRTT2VJTTNUaXAzT3d4Yjh6WDhIVEljVmNxdjJ4VWhQWmRxd2N1a2JRd3B5WlZIMk1iYkc4NzduY2N5RXdYMDdITGN1QU12b29KRzBESTdRZUJrU2VrVmwtdw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNYlllY2pKdzA3NTRhQUdUU3NGVFlNN2pTYTU3d2t0TWNrWnBsTVEzMUFKaXBFYTA5aFZhZW42Qjd2ZFMxbDAxNzlYblJldkNBd3QzQWI5dWgtTFBSV2dOanhDbXNXaUJTbHh1WGEtWExIWlFHcGliTktVV21pbzc1RHJ2RV82RGZVN0lPRU1fM1Bpb0dNV0QteE53SjhWOEVhWE1zUWxUa0Z1UWo1b0E?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "CT Insider",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPV3hacTdJb0tGSUNGVWg0SzRDdnVEQTZlcW5MbmFxZTdRVDFjY1NqeXBER25tYmxwcTN0OEJINHNZTWpQRF96MXUtLWJsMXpzV1oxSVZxb21aeWJkSGFHdUc5M29JUWRmdDhvMTJscU13UmxOTEJTZGdrbVBEM1Jzek1jV3hzNXNxaDI2dzFtdw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "CalMatters",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOS1ZjWGY0QTNQeDhqM2lfazJKT2FVWXRPNkk0VzIwRnJOWFdpQmJvdGRSU0I5WTRXblE2NVZIV1RlYVlZMnpvSFJOUzhvZEFhYlRRaXdCTUl1OWdyeFZIcjQzZU5yMmJQZXNXUFpDTkRNMlBEV19QR1NnRTU1OUppaG16LU8?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "California State Portal | CA.gov",
+      "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxOSTExb21JRlBpZTFvNUlRZFhncGQzNzdSYUR5WWdpSmFzbTlYMnp3M25qVGhjUk1nTXJJdThUMmVpMmpLVWdmZ296R2xxckVlYTJoRjY5ZHBRUXNybGxaN2xTWVA4X2FIZGh4cTB6NTlieHBMb3gwbGh6b2xLbHRmamJZcnlDZmxsRGgtcDB0dzJpRGRYdXVRVGhnSzN5Rlg1TU5FRjJFbTJtbTZMTFlpSXE5MjVOSkJhSXE3MHVaOTFtMFV1ZVNaT2hHSjg1ZlIzbF9hbDNlYkpFSDZVOTdnY0pVeXF1OTdRWFItdGdSTUJKTTVudjVRcGtCakxraFJxbWFWRGlqZi0tbjg4TnZmU0EzX0pZQTc1?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Crux: Covering all things Catholic",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE40Q0EtckI4d2lzSFlDRkZrNWNYTWF1WVd0aF9OQ0YwVDlEWE1zX2Q1b1hEbmVMeTBsemZ1TldBd3RRc0Iwd2lOREhQNE1sWHVFaDhKdXgtQjF6UFdnQ2RGRVVKbDQ0Y2RKYWVLRWNTRnpZVU5ubWVuaw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Crypto Briefing",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE43UllrNm1RY1FRcEI4eHFxMEVEbFBfUUxvZlBscDB2V2Q4MGhSQ0Y3MmJQZWlIc1dESWRmUm5fQ0V5WlQzSTU1a0h3MC1wRXRWUUVidF82MGY1NnNxN2x6ajJ4NXRMY0NWaXZiQWlnR0ZHY3FjaG1UU3IwcUc?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Daily Journal",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQeXFuR19vQUEwbEM5YXBabHE2VklhcGRUdlVJRmgzQ0N3Y1EtTDZDOGpuNVVxUTZNZ1I2OGJhb05aNmMydHc4TS1Na3E1VFdPd3BJcXFCN1RHYU1fUV9GTHppVXR4UXRsZTlsbkNOWl9WSmhfRlFSUFMtS0R0NXBqanBiUlZ4d19YZm5sVWdPdWltZw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "EY",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQb3pSYmtlUzRzVUNUQ194a2t2VVV4dTRVekNhUzFWZTFiNUFWQl95ZERmcTFGS1E5ZmRUa3A3aWY0YkxHbGVOcWxsOElhNnk3azZwWlFQcW9qdlVSRGk2X05JZ05peWRHWmMxMUw5U2hQN2RWYzFpSVZzcWpHVlNHbGhrQ2NYdnBrTDFNMzRKNHlEZ1R1Z2U5RDlB?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Eco-Business",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxObnkwTERDcktBOERHYUZYeVJRdUJtTkVuankzVDRjXzUxcHBhMGdoZXp2aGtjOUhUcXg3NUdrS0FzYkxEbEtvN1YwU0VzZ2xqY3cyRmlJQXp2M2hDREwyTlpOWjZjUWNRb1pkYTJHTXBWaUk4c1phbVlXcEtodWFXUkJwMmRRcUZuV2JVNGRGY3lUSThvM2FqczZRRWp5bjJDX0tBQ0lYWHFEcnNjWHRHQ1JVeEpzVFZCZ3U0YlVwYjZ1b2gwSFBBSVo4bVJhby1WNzMwS1hkSQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Egyptian Gazette",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNNXROakNjbktBMmRZZWZ4ZmhrUlpPcnBacVpBQWFHb0FwYTFSREZKb1JDSnp3clZoMjhWelN4ZUMxMWdqcmFLc0lRWElOazlZdGRKaXRCMHZZRVprbEYtOHJROXNiTFRaZGFpTzdVNGY0YVhyUFU5NkZ6dEQtN21sTzJVZ01IcTVOWmtR?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Elliptic",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQOTJFRGRTM3JfcVhkaktGVEVIbHVISll3S2FDMFZOcFMxYnQ5VGoxNWo0ekNER0VMbnM4elloV2dRSmxWcXprV1I0RC1MbEFGeHc0bVJjMmNnQ2RURGk0QThHQlE1eXd0blEzM2pRRFpOWkFfQnFSNGpRSi1FaVh4aHItSmdXWk9KWUZaLU1XYlplVmkyb3BkazJmVjFlVFZEWHNpZW0tdw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Euronews",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNWlJJNXdyTTE4WUxYcVlMdGZrdk5uMUd6bmdBZFBpZmpoUHlaZG45M2laZ2dIdUJQMVpyeFhyaWlYa0p5UFpJdFNjZGtidXRLbkNHX0hxNXpEd3VPaUNVMjJKZ3R4QVpKNkxiWVVIU0N4aE9DSjMzbTlMMVFNbjFSYzY3OS1MUTZQSHJiWW5ReDJZZVpRVWNEci0zNHNhQlRHTWJpOU0wVFB2VmIxWU1Lck5QeXZmQ3IxZnpEVU1ldFlNdWZ5?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Euronews.com",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNa21kTVJwNThlWG5qTnNKbUdEZ0RTcmpScWtUZV9abElCNHJRS0t4VnNDeFZyTlRJeEhtdUZQcGRRUVAtYVZtRld4WDdxVlREQmQwaDZjQkpuVmdMMWhSSGh0YWVibC1LQ3FWQ3MtUU5KWXhOOU1RWGluRENxZV9LUHd6N0RRN2p0VU93OTI4bHA3T29VaE5VdUpMUVMxSm5JRmx4bzhYVF9oZFo3?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Faegre Drinker Biddle & Reath LLP",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNTEh4TlZWbmF4TU9MX014RVZBYXh0cUQtSGVyb3Nfc3c2anJpcGVpanZ5VzFVcm4teXowekFxb0t2dlM4R2lLX2VBX3Zpdl8zcG9YUmJQeVNqTXYtTnhWa1J6NUdRaDJDMUYwQWhOZWdnM2JfaFhJQ0hCNjBEUms4X1JTRTRORlNCMERKMVJZVjV0cHB6UGdpWFlRNUhPZ2tsS2VCbEtBcGVKR2I3N1gtaXZsc21fNF9tVzd0YzQ1Wl9Lei1wTFhLeC04cjhSb25GdjlZZWF4d242QUNhakVieks0dGNQMjNG?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQb0dGaE5ETF80SXdTQlVXU0M4Sm9wRXZvWjkwREFIbHhPOTg5Skw3Y1hwREFHcG9yM2NTMnRJamxGSGxsczVoRmV3MDVkOGxjbjNSVm9TbmVZRkh2eGhrY2Q1OVlpNUJkTnJVcDBmX2NIMU5UOVRwV2Juay1Hb2dxencySEk?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Fortune",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1CVzl4LXRnWUdVdlJ2VEg4VnE3VmxlUWt2REtJMHRJVF8yOWJTZnltWGlZaHVTbUF4TUFmNE4wdzhkQ3p4dG5pRXFqRGNSbi1yUzBwQktjTk1KWW50WkxWbGp2RzFvZTZsR01vbVlRYmNWVEpBWW9qbXAwSTRRMFE?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Fox Business",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9zejlIX2pJMG1Zb1dmUzFCNUxTdGYzTDA3UFplQW9BVXVqTmhpYWRRcmxDa3pHX2tCRjQ5bWlCZ28yTExhel9IcFV4TjRRN3NCUjF4MmVTMnZlYjA?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Fox News",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0ycmllRzQ2eXloS1E0TTQ5NE5PMVpZRXJBRU1pUEJZcmlfUzczYUJqbVBJN1hMZ3Q1cVlJVGQxS0lxRFRXRnMwRDE4RG84UFB6R2JzdWV3?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Healthcare Brew",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObWpfSHV2NFdmRzNBdmswZWJvYWZSb2lzRkY4bXNaYUpqQUNhbFVVbDQ3RjE5em10RkJDVWxmRzNGalFTQlNKN2xkQXFySmlOUXh6aENNNnBtS1dYNjZXY2JrTHBlWno2cXZIMV9vQ2JJSXVKYmhEbnpYSENqaW5WeVEzeE5SRTlpekJ2YVM1WXQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Herald-Zeitung",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPaWR4ejVOYWg4aUVOVmdzc1VORy1KRHJKTHpZbWc2MnJPZUk4VlZtdXhqTUVaVlpzSmJwYUF5N0d1MWh0Q0dXNXNzVU1KX2NrU0g4dTlOTWNCd2ZIUGtSRjFlVzdXRzFHcF8wd1BKNkY4QnExS3l1WWZ5TFZwZ0FaNTg0Zk5KNFR5WnZaRGN4aERfQ2Jyd2hWMkNSbTlfM1liOHFhcEJPenJ3WTlqUGp1ZERCcV9fWWNzNm45MDdJRElIc09LYkFiUHR3ckQ5UWlYbVhWOQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Institute of Employment Rights",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPUmE4WGFwQVhwRnRuU2hLcGM2Z19QM1M0WWJRYlJlSGxQdk1yb19YRmZ4MGJPMlJUY0FuZFFSV01oXzNlNGIxYW13X0pnYzBoU1h5SGIwRjhEYlphUzhmRjgtUGRoQkhVUjVLX2NZMVZBQXpMUVZKYTFuRWtiRDQ1SWVKa0VOWDFQd3l1Zm1ZaUxtSHQwWmY3b09xc0M?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Lawfare",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOZlU4NjR1WHU1X1FPalpDcmlPQmdYVGI1aGljM0NKc2N4MDJ4NVBBdHRINDRBYjlZcUREcHVaaEUtYUtuc25aNnNhdmJMR3k3a2MzNFQzZ191VVhCZFZuejRCXy1uM1VDeGQtdXFvbnVUY2hWTzJsOURleWw2WE96T2RpNG4?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Legal 500",
+      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPVFM3eDF0bW41di1VaFhJcWpPMTViZU9VOVZPN3R0aldvYXFUSVBxbS1zNk1CWHRRNGNmallUd0NmZzJiQU9hUGdndWNfdHB5Y3VzM2ljdkVpWlcyRUdIdlo0OGd0YWRLOE82eXUxblVGVmxCLUlmSEx4aklNZGUwbENwci11WUNtcDdheFVWZGhXXzBId19LQ0VZY0ZHenV5ZWlHV3p6SzItMS1iZmFYdk9KWHVpWFVHTTRJTmlRellTaWlhaWRYWVVNQmNZYnFkRFdObEpRRktuNWxqZFZjc0ZyY09rZ19rZXNrQm5jZUMyXzFwVTRJQWRIM1Ntdw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Los Angeles Times",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOdXpNbE5sbUI2dS1qRFJqWU1ZQi1XbzR3TVZSYnRLNmlhU1FfZGd6UVUzVEQ0alRJZHRnM0Jpa3dzbGhMZHFhSjlwcUNIa1Jyc3Z2b1RVRjNkOG5pZ1hVSU5URTd3RlBSSWJQM25VclBybzhydkhHOGFNOWdVMzk4OWE0bWdyZG15ek1RdURITF94WjBfQTNobEhsWFVzZw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "MLQ.ai",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNamYzTEhjZ2lITUg3QTBnU2h0QlRiYWlqdkFneHZ0NDZhVFNyR1dWX1FkVlZSZG02aDhyYVBfR09ZNGszZjdnb3E4SUFublZUc0pjaFRKSm1KOVc1NjNBN2dxTUFwd245Wk92cEppbVJDYzZqdVROSTg2YnRyWWtDcUo4d0FzTDE4dGlGT2lRM0lrR0JiaV8wMm5fNEd6dlQ5TExYX2RhX1kyWFRnb0ltNm9iLWFDcGhmc0lxdG5ud1N1SUM2QktWWEtISXdzdw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Mail & Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcUJWRUFjeWFsWXI4LWpxVl8yS2twUGxQTy1GeHYza1Z6VmxsclU2b2hQQUk5UjdlUm9GVVhZajR5dldjOXAxU0JBX1ZyYWZTNml4ay1ZeFNTUldfa3kxWTBzUWplZ1BsTDJXMXNmT1ZkQVV6MkVuZjBMUkVQdjlud1F0bDd2RUF0?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Mezha.net",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPRXQzNVZKTk12b0JSb280eDJKM2JQaXFNQmlzMEJ5V3hRc3ZMVXR3cThxUXpzZ0trS3hNemZaNV9iS1RHSTY1WFhBWkx3cmFWdVY1ckNQdkNQTzFqT1dmWVJ0cE16NFYyakhMdWVDUkdHRlVrTU5URDVZcnh0anBpT00yR3VjUQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Moomoo",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPNzc2bE14Z0U0d0J0M3gtaVR0c0daRDZyTG5helZJWjZoRFNfTUJxZjRSWEVxWC1xbmxpdnFiVGdrSWZDaEw2ZUdpbGRCbEo3WEplT3NDUE1OaFc2ZW42OUh4X3QxeUhFbDlSRU4yNUNwV2t3bXdLNlJmQUQ0ZWo0bUNiUnBURVNjT01za1Q1SXBjdHdNY1BXeFJvNXpWUG5kbEhKTmxBOWx2cGxo?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "NBC 7 San Diego",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcktFTzhndEEzb194dWZ4YjRxTFBnbUM5c093SjVqWE5JeXFrY09FUThJZjl2NWpFNV9Malh3OFVKd0ZtVUI1elIwTGNrVWluMFFjeWJvakhhc0drTWY4ZVJKOUljS0psckxIbWgydE5tOG1GdlJDRUVRVWR3MENyZHpUcnE0MFJISmZFRS1SZVlPN2lEalhONjNwc2ZUSlNk0gGoAUFVX3lxTE42NGtYM2RLdk9BYUg2YnRQMkdFR0dCZk5BR3QxWnEwcWpfNWNacWo5cGVPNmxrSjBtTjRZd3hUSVRoNXZPZWlkdGtGSXl3Wkh1dDZJUEhOb3FHZHJ3Si1rdDdKWFY4S1pjS0E3cDN2OHRHVzBVSUpuRmhuU2d1dzB6MnVxRzZiOVNJUXVGUnFIMFhOOHE2emhibFFFV0dlWmNYMGxxMmJxYw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Newsweek",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQQThWc0J5ek1BdVFGenBubDYzdGtid0M4aVV5Zlo3NUJ6bndPNjNGZHE3SGo5WTFOMEFPUGpxZHduSGNWQlhKWVpudmdvSHEtZUJlWWNIVXVDUUtLWF9sZ3ZvYkFnT2tTVUtPa1BRRUxXMXB5TnVmMEVfYkhsTnRMdjRvMUlvTE43bUtzMl80bExiUl8zQWc?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "OpenSecrets",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQUHBsc09LZ0V3UDM0M1FLWHczYzFqOHhRT3gyNHBTSlliZnQ0SVk3ejFJb25HUkp3bTNiWDhDNENzVm1jVU1sS0FHUU9ScG9IeXl4NGtyT3hlaGUxY0NlMVpCRmFkVVJUdUQtQmxMYklRNmF2d3NkWjlCcXFxbTMzcF9OWXNvZHd4dlppckVUQUJmRGktYzRwTzRFeEJaMmpHc0FGaHRzNzVEUzNDYU9RX0dJR0ROYnVDNmxlV2Y4Yw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "PYMNTS.com",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQelJDNXNhNldVMzJfMnJYUWZFZ0RFSmNxVEpNZlRiSVZPN0ttZHZ3aGRtUVRVUlE0TTBGTFJrMEdmTi1wdG1DZldyZV92U0NKRDZuZmpFY3dhRzJJMGhScTVEVEk3alFTSU1WeWhRSzNhOHFLVDI3WkctMFNNa0E3WnFtWVJLdlh6X1dIU0paT3NVLVJGcGFVQnFFTFNmVG1sXzBBY19BOHY2UjFOQU5OUVpR?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Patch",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNYWNpZmpPemh4UmNPQ2V0enVwZUNCbHRxZkllZTliRlpuTFpVNmc5QXlfc0NCeDcwaG9DUzl1MVFQbkVDdms0cUVmaVl3YWdGNTk1ZW1XWEZ6U0FPektNSzZzRXU0QkkyLVlxNmRZNmk3ZG84VnQ1X3p3b1FqRTViTGZBN1FkWjdFOEFJXzEtdGJyY1BZeVQwcV9GUlAydzVUNEI3LTJpa0FqZGVFRmR6M3VzbEdEWEpSSkHSAdgBQVVfeXFMTWs5Y25xMm9GdnpPeTBRYUV2ZF93enVWVUd3cXlCdEZrc0llcWEwVzgyOGhHRkRnRGwwOUxKandKUk5BT2xGV1BoX2tscWRzR0ZOVGQ3YWhweVFtQ3ZoRTNYMF8yb2FYS0k0ZGFlUzRmQ0tnVUM1QjFmbFppRjVyQVdUdjRFLUpURDRMcVpvbTRqblZFNTVlNjh1MGlvTmt6Vl9BbS1qRWg2S1d2MVdyQ1FOV2RZMjNSRVpIUmtUWElpS0psX3lSRFBhcGsxZUdCWDVsVXpqWUtD?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Politico",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPM0daNjJ4MTZuYzRVRVdvbjBCeThWSkJ5VlotenFObGMxU0RzUlZFeDMzNHVRWGRRVUw1YW1JZW1FcUlkVFhERHNKSWtTcUQxZk1lbkllMjJzSFJzeWVFamlSQWc5MG9nMjhsVnQySDB0WE1jOHhfZDZYVndkYjk0cmR5dGctVjJZdVN6aUxzcTJZQQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Ratopati",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNMWhrTFMwSFlWTE0weklwT055a2RyRlVqMFdBS181T2VxbFoxUDNqN0pGRE53Wnk3dkFyazFwR3FMRXI1aU9iS3pUY0lkTm9pOUNFNzA5TFpVc2VJVzR2XzRBSEZSNTU5SEE0NDgwSWlLTm9XMjJ2TzFWdlAxMDdfd0lRZw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Regulatory Oversight",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPYWtDa3VJVzl3a3FxbDFZQlNLcGV6TjRlYnlvUm1qb2o2Z0o5RzJrSndPM25JNnNPYkJjeXhud2RKckNtZ3NyS2FjaWxqYnlmUG1fUkE5SGQwYkpKLVJkNEVQbmlvcEhLX1VOZlJLR25lUEI3aTNoYmVxcnVOU3ByR2pJSmJfWkdZMEZra1BHbmczc2dQLTRLZXVQa1hWZ0l4TkhXUlZPc1E2MmZTcG5XaHRB?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQRmhOamVpZF9sMG9qSElyRS13Q2hIdXdncHVuRUIzUU1FYlM4eGNSR1NVcE9DdHVFNXRDT0ZSdTBXUUtSZGJUWGdoNnEwLXRqMmVRd251SWpHNVVsSWRFODZ3S3ZZQkVxM0dTaHNUaXA5M0FLVVYyaFNXa1l1a0Vkc2Rpc01EWWUxYi1kQmhwckhZOTBURFAxeQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "SMH.com.au",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQQ2l3M09paGJMMGpHMFhEYUJpYVJjRjJtaDBSb0U4QnZzTFk5U1l0UWZrd1BLZUNxVjNjWV9zdmRNVW9iOWkwV0hwWklJR2pObzQtbFByaDRZQUx0X2lGeFFRUTUzMWhkM0hGQ2g5azhXdmhZM1EwRVlVWE5MMHFFbEtXcm83a09sOUJvUGJTYUFsaDJlbjdZT3ozZTY1clc0V3kxVEdIaU1YSHUwMVRwQktTWXRjb0RKVUpBUWFWUWJRZGFOSTYyYlM1MFk5UldOaFE1dGJkTVdlTVFXYnFQUVBNREo?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Startup Fortune",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPS1ZHRk9mdndidlpxdmdQaGhUMmVnakFKaGQtMWtDOHNITzJXMEdIRUliZUNIYW9uQnNPd3FEZWhwX2dfRjdpMlo3c1JnTHp4ZVN0ZzRocEwzV0RDQW0yMndwampVcEk0dmFjZGNOaVBaUnFmcXRUanNVMlRjb3l6dkpOR204QnNuVmlwNlRPY0loVmFPRG16N3Z5M3VkQ0p3ejZSdg?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Superpower Daily",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNT2pFSEZNQ2JRU2E5aUl4SEcta3lVR3lwTnJtMzQyYjJ2d2xha0xDYVRJRFpnb3UxUm4yYWp0UGVUQS1Ecy1YNVY2dEVmZndsMmJMVEM2eU1jUGYweUlEalk3dmZ5OG52UEpRQWxrM2ltNXdOYU4tYjdFdXF5ZElDTHVYLWZPS0JpMmxxOENVQ21WWWdKd3E2SHpEWEhkOWdHYTBWMGlRMHBRUQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The Conversation",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdllRcDN4MW1DLTlWSmg3MmNKUUVzbFNRbnBseFE2SEVrak5NaHV2SmhEU1EwZWpzcWYwbGo4cGRWVk9VN0gzZUJmSVoxcjlWSnJzd1dPNFpWdlE2OE5YcThkSjdxcDVKaVRBbjJsaDZqSnluWG9kUWlvLXJyeHpFQWtIMHBFaEdvRm1lWlozVTl4UUNja2xtZlBBVGZvVFNxR0dOS1RHM1RYRGtiNE1UQzRTTQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The Copenhagen Post",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZ1lMdUcxNVJfM0VwQ1BnX3JZR3dDQnRTZ3lnZFUtUmR1eFdaRzFQZ1pDSmRCaWZjdU1EOWJidmozOXRfTWFTUzk3UFJ6M05ZYTZxVUt1OHpWeFBfUG5pYmwtSzFIRFQ5SFNCejU3V3RJUnZCTGNMbzBTNi1kUnNqSFpmcHBtN28ySDdlUjI1cjlrbVZnaVRFZm0wU01QV0ZOX09JNW92b2pwUVhORW5uNGR6UzJ3V0ZvbGFTRXVPTU56Y3V6UmNQeEltV20?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The European Magazine",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNOTlEcnFIUVpxZDNJSlBuUjFHVWRqVHJ4RHY0NFFBakhIWnBldVNfNktKSE1sUU8zV0VJNDdRM1ZCTGxraDc1YmlsVktUWjFBbHRYV1RGLTJsakFiS09xSkYwRjJzcl94NkVhU19YRVl1Y1M1ZmhvS1dXOXhDcHM4ZVhXMjNVamxSekplekVlRVVyMWk0TC1SUDgtNmZQWG1fRGt0RQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNZzZTcWFJbUx5Wmt3ZWNyOGttaFlYOGw2M3NZQmI3cUwxUUhPRGdNbW1RV0Y2bkZtNUhROXpHRkxsVmNxalRHSTRONUdQX2RGZS1lTXB5aTlNdUU1LXgydVNsZGRzZ0Q4X3RJazE4V0NzX3VqbGtVUVlWODJ1QTFBOFk0ZzduaEJzbGkycWpIcU1UM2VISENUajBDZVpwRG9wWmRfeWlyRnBiV05jSEFQQWJxbGhpUQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The Hill",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQVHFzcnQzMGc4VjJ1d0t4bjRHV2VDcUZHbHVyNW90WjNDSkxsVjhwdGpwUXRlb01CRzhWcEdraTEtUk13TlppaDYzYlR1cDFnU2pHMmdkOTk5REhoRkFjWklNaFFEajBBMkZ4ZVFGUU1lZENQdThHdWd5cUlOTlQ1VkY5eEd1ODV5Zk1Lb1pDZ3M3MkczczhQUlZyQVlOb0pFSk9OcWZIZE01V1JFV2ZOdTZJMNIBuAFBVV95cUxOclRVS3ZrTFBXbjVFSDFrNndrc2Z4THZXbHB5TGxaMG9sTUgyOFU4YWFObTNVQ21WWjJBbGUzVGlOTGdieFlza1lvelhRWVJBcHJfQy1XYUJfWTNzcFdGOE9ITzlfMTlIYmNKNXVTdUJBWmNwM2JYdDRmZnRRLUJMTEo4SlhyU3B3bWk5YmVGMHlEeGpaeW9SLVF4N0hub0lXWWJxWmNtam9aR1BRVHVBRzF2djFsSjFI?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The Hindu",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPemwwaTFOLWNEQzdNUUpyVGdQeG1fR3NUODZ3NnJiSkZmY1JncFZwTExWLUgyNGZZTGNmXzRnZG5TeEhHSWVBV1JVMkNUMmY5QXBTeWlYVHNUeGJOZVpxNnNFR1pYVlhwR3FRWDNaSjhHajB6QVp0LUY3MmtwNWZQOEJ0dTFXcEFuVVI0ajFtYzZRYXZVUmZjMXVfa21sZ04wT3FtUF9xRllSTmFfclNTX0toMEZaZFNrclhF0gHCAUFVX3lxTFBBRlBDRjRoRG04U1dQYnlDcENrQmtHWm1uaWdGa0ZoSmdQSnhGb0tKY3E3Y1FxQ1VzejNKWlhIaFZGNzA2QXpGSnFfQXRDQW5XcVpXeW5sY2hudnJCUDlDZDRDRlZHTVZMcUR3eWxnZlQxeWh4U1plTk9ZLW1UbG5YMFBmbWs4S0xjQ1I0UlBFMFdELU5udEoyVG50ZDhidnN5UWdjSXdsSEFPNXJ5UC15MkZmRENpWmZ4VDA2Zko2b0hR?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The Media Line",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNbFc2Vzg4SmtIbm02MGtXUU9UQTFsREltTmtzNEJJSWp2dllkT2sxSzhYc19yQVlSWWJkZ1FzUUtpM3VrYW1rZTlWUnNwM2N2OXhnS0t6Wk5sVG1JelY4d1JYNVl2SmVEUktZeGd3V2ljUXRpX0VQZ3B6VElyR0tFRUZCVGx3QVJJUEQ0YXJLVFdZdmZQYnJiSUNrTGllQ0xFWU5YbVYxdkt5MlZXZW5kenVSbklEb0FJb0QtNEw1Zmt2emtmVTJPc2p4ejRWQQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeUhxZ3pTRHRkU0RtVFV0SVR5Sko5aXdTbS1JbjZaS0JjQWpMdWh2T2ZyVTRxS2w2dFhjZERJRjFYUE1PZmZic0M4bk0wcThRM2x0US01cTVubFdacDZBOEd6cEwxQkRhWUw3S1J2bEprZFkyU2tMU21Fc1U0SWJ6elZUVWc?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The Regulatory Review",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOR1NFV0Ntczk5N2t4LTB6SXFGb1BrWEZURTh2MDN2QWM5SlRxZGplVU84eHBZdFRMdWJCb183Tkd2WVZSSk0tUFlycjNPR2tiZEFNaWQ5MHlRLTh1bjBBNW54TVZVOF95dHRzZmlVbDJIZVhBaHJuaFRaY3daeWdkQXptT1NZN2xyclZMalJHQldJd2FpdmFNZmZBYkZic3FVRGc?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The Times of Israel",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQWXk2VzRoZ2RDLThFSk5kVGhJYlZzcmpqQmdpS1Z6cVBHcUlKcnBaR3V4Tnd5TEFCbmhOSnNRUnhUcTJabDhQUHBpdUdmWGFSUGJ5bFVxbkE4UTJ3aUxLclREQnlPSUpQMk5Md2pJcEl1d2QzOFhjdHZnUVVjdmswZDFqQmpYMi04?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSjZLandHNDJKcTM5WWhtaGlHQ1lwUGJqVTIwN0JEMlhqcXgybnk0UU1laXJLcURHU0cyTEQ3MGFBMThyM3Qwc202UzVfRkEwRTRNRFpmWnl1cm1VTHJiMndzbEdGR0FRRzQzNmE5WGhRczVpQXg4TXBTRFZqZDQ3LVoyV0toeDd0NVJjWTdKY05UYTZWOGRXM1E3eDNTMDBDUjJRdG9QWQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Time Magazine",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaVZtMXItb3VGd1kzTlEzdk1jTlBtNkVxMkQ5b0dVcnpYYmYzZmctX0lOZVlJZENJcThURW5wSDN3dzRFQUcwTTdrZVZ6aXBZOVZ5eUwxNFYtbENBX21YQ3lOeDRHVk85MTRTVWlCWERueVJmMFliYWl4ck4zUHhpbUV4U0FoOWNkcEY3bjU2U21oQUpILWxhTnpRdE5tWGhW?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Traders Union",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQMjJUemhUT21jcUI0blVyamt6RTBTczRuRFhRQ2I3bUI0WnlfclNqaHFIWEI2VzR2QkFHQ1laSkhrWDRRWEY3dTJNVmtLV2FoQTNlM2hpamZVV0REQ1UySWxrSHM4ZnNUZnRLUloxeGpkS3I5MXFPTmItQ2lGNmF4b09WbEFkekRBZUZnQzVEZWprdw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "UA.NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZUx1QkdkQzVrNzVVTWpzRGFtM0Iza25lN0VFT0V0cmd6ZFNmWlEybW9CMUxaQUFnTERYdkRQTVFiU0llSzFhNGRDeGpFbWt6N2Fsc1VrOF80WVk2WVpRaWQ0SFNTa1FkMTFWVHZUdzF5SVNKLXR1ekVPS0FiNUIwRnJaQ0NsVFo4cEtZZVd6bk5PcjExUTNJRDlhWW5scHVZaVMzNnBGdzBxTjA?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "UK Parliament",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOSXhZS2w0Wlp5MFZ3TU52WXVQTzJZWmphUmVqNklmaHk0VGpUZUsxVE9EZ2JwdW5TekpYTHlXcHpSUTBEVUw0MWZVTUJiNUptRmtjMDRfNmxyZ3VFeUd6aUNUU3VXVWt4czdWeTg1cHBMQ2xQck1zMWx5amxTazlQRU9QTlVzejFVZ05peVZtZkpjMmFxUGRiZDRobkVfUXZpWk40N0xpclJXSjQ3TWl4Z2FsWTgyQi1OZEw4NENWME8xMW9VYV9wMmtReWdoWXg5SC1XZmJfamVfYlVqTlE?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "UNI Global Union",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQMERVOVF0WHVTUW5iWUU3VTlhZGloVGJveGY1Q2JIQ3J4ODI0ZWhUM1lCLVRzM2wtUHROZVdTNDRFbUhHc1lRQi1jdGlBblFwaFFIQ2Y3aVc4ZFUwZEZYZUhrX3UyN1ZIRW5iblN4RXg3aVRDTE15LUxkeHhKbjE4UWhRSUZXR2tqNlFGYnJoYUV1RVlYMmR6Zmp0b3c1RHpxd3BrTjZJRkVldnlPMVByVEVR?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Urban Milwaukee",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQdmcxelBuSGtKcXkzRlVRN1FIOUFidGhrQWNacVFTRlNObmxqcUJWa0p2YjM1Q0ZxeVFKZlZldC01ZGs1QXRqSWF6dzlGWGxFMkZnN0Juc2V2WW9uMTYzbElWaE1fMFNwRG15V25aTFRWREtmdFpaLXA0ZVJzejRiZVJ0R3pyM21PX3hZYndsS25aaHlHaXBaa01IXzRNWVU?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Vox",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOHgyMFRld29hX3pOTDhtcjRYMmtKMk8yNWF6NFdYR0wxRW8xdWNFYnFMY1JoSTFFQ0hWNlRQdnN1WnVMT0I5dlV2eWhic3k0WTVyWFE2RjNWdzVxSVdkRlpSY0RIcDUxdUtRSmE2c2lLZTBadnM2YlZYQ0ZQRm5IRlNjVTNWWDhja2lXUkV6aGxoc3N5b2xvVkhnSQ?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "WBFF",
+      "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQbW1ON1ZxTXNNXzUxelJuSGdmMHBDOHM4U1ZrYVZVZEVCSmR0bS1Tb2l0SkJHeTJWM19Jb3JBYUdtejZrNmV0NG9PU0NiX0lRaC1vcXBzSzZibGE5Y2Y2c2RZTk9vN0VnX0JfYjlIbjNkUnhDQWRQOTJCNWxEZGFGX003Rk4walVpMEQ0Q2YzU2lYRHFVWDlJSWJvRnp3Z085bmxWYVB5VHN4dzRqUkZhQnVsM0N2bjEzRDN6WTNKLWVSUzZsRlVmWEVqVjJkWGtYNG1lMnhDNERnYktkeFM2dlYxU1BxZE9INjZlNHlEOUlnOEREVWI4eWhnOHpBX0JYZlB4NUplZXgtZGpEVEFR?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "WCTV",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNdllRWmpBUk1fTWE5di0tWUZpbnI1aXJDRVBFNFVoMkNPT2pYejB2QjBjSzRLSGp5Q21RbkdndTJGbU1zZ2s1bmZsQnB3RF9mZG9jQ2lhN3dwbUVUTzRNWXh0cWlCbl9URFAxRjZMYmR4RHNhNFFvMXU5RmRrWWhSblhRUXJSTVl0X05mMkw0cnBQRFVP?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "WJHG",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQd2piZTg5ZXktdUJscmlTTm9laU11NTVOSGZCQ2J0NkIxOUpZTFkxVndWRmstSVd0MW1RVk54MnlUN3RmQlVQYlFrTG5JQ1pBd2JDTVd3OUlRcjlESWVsbEFsYlEwZktFRFBrajFScnlrdEtLV3ZOZEFXNXFPSlNRb1pPc01kNHk4WXNvb2hPbkNDbkd0WEZWaXZnZkZ4c3BBQkwxSG45RdIBuwFBVV95cUxOUmQ4ZlhOSTNrcUIwNWpBYkpNbGhEeGE4Szc1a2lMZWc4UDJBdUJuNng5My1UZjVDUzBnX1hHYUR6Q0xiN2xLNjFUMVV1WHpYLVQxbFVBbG9CWHlQRlRZRWxYd05SNTlleGJVM21JQ3JQUnhEQzlsSTI4MVRqVWExbkd0cnRDMk5IdFpGT0x4aTlaNE9VS3EtdzF4TkJxVnVHb0ZmWVlsYUhsXzl3ZzVjVEJWY2lKYjZKY25B?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPRGY1aTR1bmQ1YWZvbUx5QWpJc0xXRklwSDY2NTUwNmhPSXMyOW1IQ0loejBYQzVXUkFBUGp4Rl9MT0E5TkFQVkRtdGpBVWdEeHE4cXJBZTBSNEFTTEFjbzByRGpkTThyRXZOYmVfS2dpbVk5LU1heE1rYUN2bUEzWDllTVFTMTh2ZlJpc0Rmbzh3Zw?oc=5",
+      "error": "google redirect not resolved"
+    },
+    {
+      "source": "dandc.eu",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0tTGkxamFseGctY0R3a3pRUTBYNTk5LW9ob1JJVWR6dW1XYm1HNUpZMERqODNUTkZkYU54MUtVZEJrbEhpWkdzSHZEYWl1ZkZPbE1xdTJkeERIY0pHYlU4SzVyOVZFRmhaRDVtdHhPV3BVVHMtb21LQVJVbmVWZw?oc=5",
+      "error": "google redirect not resolved"
+    }
+  ],
+  "failure_summary": {
+    "robots.txt disallowed": {
+      "count": 0,
+      "top_domains": []
+    },
+    "HTTP 403/blocked": {
+      "count": 1,
+      "top_domains": [
+        {
+          "domain": "smefutures.com",
+          "count": 1
+        }
+      ]
+    },
+    "HTTP other / timeout": {
+      "count": 0,
+      "top_domains": []
+    },
+    "google redirect not resolved": {
+      "count": 78,
+      "top_domains": [
+        {
+          "domain": "news.google.com",
+          "count": 78
+        }
+      ]
+    },
+    "headline-only": {
+      "count": 0,
+      "top_domains": []
+    },
+    "social domain": {
+      "count": 0,
+      "top_domains": []
+    }
+  },
+  "articles": [
+    {
+      "title": "Bitcoin's regulation bull case is played out. What could drive crypto gains moving forward",
+      "source": "CNBC Tech",
+      "url": "https://www.cnbc.com/2026/11/20/bitcoin-price-catalysts-tokenization-regulation.html",
+      "published_at": "2026-11-20T18:07:18+00:00",
+      "retrieved_at": "2026-11-23T10:36:09.142817+00:00",
+      "excerpt": "Crypto investors are hunting for the next positive catalyst after U.S. crypto regulation — a longtime market driver — fizzled in 2026.\nBitcoin traded around $61,500 on Friday, a more than 50% decline from its all-time high above $126,000 reached in October 2025. The broader digital asset market has struggled after the Clarity Act, a crypto market structure bill, failed to advance in the Senate in September.\nInvestors now see Wall Street's embrace of blockchain technology — particularly tokenization — as the next trend to give bitcoin a boost.\n\"Every single traditional firm is now looking at digital assets,\" BitGo CEO Mike Belshe told CNBC last week in an exclusive interview from the fintech-focused Cantor Convergence conference in Miami Beach. That includes BlackRock, the world's largest asset manager.\nHe pointed to statements from the asset management giant's CEO, Larry Fink, who said the next major evolution in global finance is the creation of digital representations of every stock, bond, fund and real-world asset onto a shared blockchain ledger.\n\"I think the biggest catalyst we're seeing right now is actually very much in motion and it's happening, which is capital markets are moving onchain,\" eToro CEO Yoni Assia told CNBC in an exclusive interview from the conference. He pointed to the SpaceX IPO as an example, which had derivatives trading on eToro before the IPO.\n\"First day of trading, we distributed it to our retail clients, and it started trading 24/7, and that's all because capital markets are now copying crypto markets and are sitting on the same rails,\" Assia said. \"Crypto markets have always been 24/7, they never sleep, and now what we're seeing is that capital markets are copying crypto markets using the same technology so stocks are moving onchain, they're being tokenized.\"\nAssia said that supportive regulation in the U.S. from agencies, including the Securities and Exchange Commission and the Commodity Futures Trading Commission, is also helping adoption of crypto.\nHe pointed to the CFTC earlier this month clearing the way for crypto-style perpetual futures tied to individual stocks to trade on regulated U.S. exchanges for the first time. Assia also highlighted the SEC's move to issue an order in September, creating a regulatory pathway for certain trading venues to trade tokenized representations of publicly traded U.S. stocks.\n\"Blockchain technology is now starting to power what's happening in capital markets,\" Assia told CNBC. \"That is the one of the biggest changes we're going to see in capital markets for many, many years.\"\n\"We're talking about hundreds of trillions of dollars that are going to be tokenized and move onchain and at the same time, I do believe that will support prices of bitcoin and other blockchains as well,\" he continued.\nThe industry is also watching whether inflation will ease and geopolitical tensions will subside in the new year, which could lower broader macro risk currently hampering the industry.\nLast",
+      "summary": "Crypto investors are hunting for the next positive catalyst after U.S. crypto regulation — a longtime market driver — fizzled in 2026. \"First day of trading, we distributed it to our retail clients, and it started trading 24/7, and that's all because capital markets are now copying crypto markets and are sitting on the same rails,\" Assia said. \"Crypto markets have always been 24/7, they never sleep, and now what we're seeing is that capital markets are copying crypto markets using the same technology so stocks are moving onchain, they're being tokenized.",
+      "summary_method": "extractive",
+      "discovered_via": "CNBC Tech",
+      "flags": []
+    }
+  ]
+}

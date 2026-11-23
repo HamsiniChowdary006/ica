@@ -1,0 +1,19 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Generated runs (keep one curated sample in sample_output/ instead)
+output/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

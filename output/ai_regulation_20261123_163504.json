@@ -1,0 +1,301 @@
+{
+  "topic": "AI regulation",
+  "generated_at": "2026-11-23T11:02:27.676935+00:00",
+  "window_days": 7,
+  "requested_limit": 8,
+  "article_count": 1,
+  "publishers": [
+    "Bing News"
+  ],
+  "notes": [
+    "Only 1 qualifying articles were found in the past 7 days (target: 8). Sources may be sparse for this topic, blocked, or failed; see source_status. Skipped 6 articles for headline-only or blocked content.",
+    "Fewer than two distinct publishers contributed results."
+  ],
+  "source_status": {
+    "Guardian Open Platform": {
+      "ok": false,
+      "candidates": 0,
+      "kept": 0,
+      "error": "GUARDIAN_API_KEY not set"
+    },
+    "Hacker News": {
+      "ok": true,
+      "candidates": 4,
+      "kept": 4
+    },
+    "GDELT": {
+      "ok": false,
+      "candidates": 0,
+      "kept": 0,
+      "error": "HTTP unknown: HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Max retries exceeded with url: /api/v2/doc/doc?query=%22arti"
+    },
+    "Google News": {
+      "ok": true,
+      "candidates": 31,
+      "kept": 31
+    },
+    "Bing News": {
+      "ok": true,
+      "candidates": 12,
+      "kept": 12
+    },
+    "BBC News": {
+      "ok": true,
+      "candidates": 32,
+      "kept": 0
+    },
+    "BBC Technology": {
+      "ok": true,
+      "candidates": 21,
+      "kept": 0
+    },
+    "BBC Business": {
+      "ok": true,
+      "candidates": 50,
+      "kept": 0
+    },
+    "BBC Science and Environment": {
+      "ok": true,
+      "candidates": 42,
+      "kept": 0
+    },
+    "BBC Politics": {
+      "ok": true,
+      "candidates": 60,
+      "kept": 0
+    },
+    "BBC World": {
+      "ok": true,
+      "candidates": 35,
+      "kept": 0
+    },
+    "The Guardian": {
+      "ok": true,
+      "candidates": 45,
+      "kept": 0
+    },
+    "The Guardian Technology": {
+      "ok": true,
+      "candidates": 31,
+      "kept": 0
+    },
+    "The Guardian Business": {
+      "ok": true,
+      "candidates": 40,
+      "kept": 0
+    },
+    "The Guardian Environment": {
+      "ok": true,
+      "candidates": 25,
+      "kept": 0
+    },
+    "The Guardian Politics": {
+      "ok": true,
+      "candidates": 21,
+      "kept": 0
+    },
+    "The Guardian Science": {
+      "ok": true,
+      "candidates": 27,
+      "kept": 0
+    },
+    "The Guardian World": {
+      "ok": true,
+      "candidates": 45,
+      "kept": 0
+    },
+    "NPR": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "NPR Technology": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "NPR Politics": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "NPR Science": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "NPR Business": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "Al Jazeera": {
+      "ok": true,
+      "candidates": 25,
+      "kept": 0
+    },
+    "TechCrunch": {
+      "ok": true,
+      "candidates": 20,
+      "kept": 0
+    },
+    "Ars Technica": {
+      "ok": true,
+      "candidates": 20,
+      "kept": 0
+    },
+    "The Hacker News": {
+      "ok": true,
+      "candidates": 50,
+      "kept": 0
+    },
+    "Wired": {
+      "ok": true,
+      "candidates": 50,
+      "kept": 0
+    },
+    "The Verge": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "MIT Technology Review": {
+      "ok": true,
+      "candidates": 10,
+      "kept": 0
+    },
+    "VentureBeat": {
+      "ok": false,
+      "candidates": 0,
+      "kept": 0,
+      "error": "HTTPSConnectionPool(host='venturebeat.com', port=443): Max retries exceeded with url: /feed/ (Caused by ResponseError('too many 429 error responses'))"
+    },
+    "CNBC Tech": {
+      "ok": true,
+      "candidates": 30,
+      "kept": 0
+    },
+    "Sky News": {
+      "ok": true,
+      "candidates": 5,
+      "kept": 0
+    },
+    "DW": {
+      "ok": true,
+      "candidates": 139,
+      "kept": 0
+    },
+    "France 24": {
+      "ok": true,
+      "candidates": 24,
+      "kept": 0
+    },
+    "ABC Australia": {
+      "ok": true,
+      "candidates": 25,
+      "kept": 0
+    },
+    "BleepingComputer": {
+      "ok": true,
+      "candidates": 15,
+      "kept": 0
+    },
+    "Engadget": {
+      "ok": true,
+      "candidates": 20,
+      "kept": 0
+    },
+    "The Independent": {
+      "ok": true,
+      "candidates": 26,
+      "kept": 0
+    }
+  },
+  "fetch_failures": [
+    {
+      "source": "nytimes.com",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "nytimes.com",
+      "url": null,
+      "error": "only headline available"
+    },
+    {
+      "source": "restofworld.org",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "restofworld.org",
+      "url": null,
+      "error": "only headline available"
+    },
+    {
+      "source": "rnz.co.nz",
+      "url": "",
+      "error": "invalid url"
+    },
+    {
+      "source": "rnz.co.nz",
+      "url": null,
+      "error": "only headline available"
+    }
+  ],
+  "failure_summary": {
+    "robots.txt disallowed": {
+      "count": 0,
+      "top_domains": []
+    },
+    "HTTP 403/blocked": {
+      "count": 0,
+      "top_domains": []
+    },
+    "HTTP other / timeout": {
+      "count": 3,
+      "top_domains": [
+        {
+          "domain": "unknown",
+          "count": 3
+        }
+      ]
+    },
+    "google redirect not resolved": {
+      "count": 29,
+      "top_domains": [
+        {
+          "domain": "news.google.com",
+          "count": 29
+        }
+      ]
+    },
+    "headline-only": {
+      "count": 3,
+      "top_domains": [
+        {
+          "domain": "unknown",
+          "count": 3
+        }
+      ]
+    },
+    "social domain": {
+      "count": 0,
+      "top_domains": []
+    }
+  },
+  "articles": [
+    {
+      "title": "Trump opposes robust AI regulation, says it would stifle super intelligence development",
+      "source": "Bing News",
+      "url": "https://www.thehindubusinessline.com/info-tech/trump-opposes-robust-ai-regulation-says-it-would-stifle-super-intelligence-development/article71718646.ece",
+      "published_at": "2026-11-19T02:19:00+00:00",
+      "retrieved_at": "2026-11-23T11:04:06.522344+00:00",
+      "excerpt": "President Donald Trump warned that any “robust” regulation of artificial intelligence, or super intelligence as he terms it, would “stifle” development — even as the US imposes new restrictions on access to advanced AI technology.\nIn remarks to the Asia-Pacific Economic Cooperation summit in Shenzhen, China, on Thursday, Trump said AI is “almost completely good, but it’s got some bad elements, and we have to be very careful in managing those bad elements.”\nBut “we oppose any form of robust regulation or anything to control and stifle SI, and we won’t allow that to happen, frankly,” he told foreign leaders in the plenary session, using his preferred term for super intelligence.\nHis remarks come days after the US moved to limit several countries from providing Chinese companies with remote access to advanced AI chips and servers. They also come as fallout from the alleged espionage scandal that’s embroiled Nvidia Corp. and its former CEO Jensen Huang has overshadowed Trump’s trip to Asia for a pair of international summits.\nHuang, who played an outsized role in shaping the White House approach to China and AI policy more generally, admitted to an affair with a woman now under investigation by the US government for potentially working with a Chinese spy agency and possibly helping smuggle chips.\nThough Trump has defended the former CEO, the episode has emboldened China hawks in Congress, who are renewing a push for stricter export controls.\nAmid the blowback, the Commerce Department issued a rule that would require data center operators in Singapore, Malaysia, Thailand, Indonesia and Brazil to obtain a US government license before exporting advanced AI chips from Nvidia and other American manufacturers to customers in those countries. The measure seeks to restrict China and other US adversaries from accessing offshore computing power that uses American-designed processors.\nTrump is due to meet with Xi on the sidelines of APEC later on Thursday, but has played down the Nvidia scandal as a topic he plans to discuss with his Chinese counterpart Xi Jinping.\nMore stories like this are available on bloomberg.com\nPublished on November 19, 2026",
+      "summary": "President Donald Trump warned that any “robust” regulation of artificial intelligence, or super intelligence as he terms it, would “stifle” development — even as the US imposes new restrictions on access to advanced AI technology. In remarks to the Asia-Pacific Economic Cooperation summit in Shenzhen, China, on Thursday, Trump said AI is “almost completely good, but it’s got some bad elements, and we have to be very careful in managing those bad elements. But “we oppose any form of robust regulation or anything to control and stifle SI, and we won’t allow that to happen, frankly,” he told foreign leaders in the plenary session, using his preferred term for super intelligence.",
+      "summary_method": "extractive",
+      "discovered_via": "Bing News",
+      "flags": []
+    }
+  ]
+}
