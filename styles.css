@@ -70,6 +70,7 @@ header[data-testid="stHeader"] {
 }
 
 [data-testid="stButton"] button[kind="primary"] {
+  width: 100%;
   min-height: 3.2rem;
   border: 0;
   border-radius: 12px;
@@ -89,6 +90,10 @@ header[data-testid="stHeader"] {
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--panel);
+}
+
+[data-testid="stDownloadButton"] button {
+  width: 100%;
 }
 
 [data-testid="stPills"] {

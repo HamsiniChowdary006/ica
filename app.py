@@ -12,7 +12,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
-import pandas as pd
 import streamlit as st
 
 import main as pipeline
@@ -20,6 +19,7 @@ import main as pipeline
 
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
+APP_DIR = Path(__file__).resolve().parent
 st.set_page_config(page_title="Briefly", layout="wide")
 
 SUGGESTIONS = (
@@ -92,7 +92,7 @@ def _safe_source_url(value):
 
 
 def _render_article_card(article, index, featured=False):
-    publisher = article.get("source") or "Unknown publisher"
+    publisher = pipeline.normalize_publisher(article.get("source") or "Unknown publisher")
     title = article.get("title") or "Untitled article"
     summary = article.get("summary") or "Summary unavailable."
     published = _relative_time(article.get("published_at"))
@@ -136,8 +136,8 @@ def _render_article_card(article, index, featured=False):
     </article>
     """
     st.markdown(card_html, unsafe_allow_html=True)
-    with st.expander(f"Source text · {index}", expanded=False):
-        st.text(excerpt or "No extracted source text available.")
+    with st.expander(f"Source excerpt · {index}", expanded=False):
+        st.text(excerpt or "No source excerpt available.")
 
 
 def _pipeline_markup(active_index, done, total):
@@ -195,18 +195,20 @@ def _render_source_tab(result):
         st.info("No source status was reported for this run.")
 
     st.markdown("#### Articles by publisher")
-    publisher_counts = Counter(article.get("source") or "Unknown" for article in result["articles"])
+    publisher_counts = Counter(
+        pipeline.normalize_publisher(article.get("source") or "Unknown")
+        for article in result["articles"]
+    )
     if publisher_counts:
-        publisher_data = pd.DataFrame(
-            sorted(publisher_counts.items(), key=lambda item: (-item[1], item[0])),
-            columns=["Publisher", "Articles"],
-        )
+        publishers = sorted(publisher_counts.items(), key=lambda item: (-item[1], item[0]))
+        publisher_data = {
+            "Publisher": [publisher for publisher, _count in publishers],
+            "Articles": [count for _publisher, count in publishers],
+        }
         st.bar_chart(
             publisher_data,
             x="Publisher",
             y="Articles",
-            horizontal=True,
-            alt="Articles returned per publisher",
         )
     else:
         st.caption("Publisher counts appear when qualifying articles are found.")
@@ -224,28 +226,27 @@ def _render_source_tab(result):
 def _render_data_tab(result, downloads):
     records = result.get("articles", [])
     columns = ["title", "source", "published_at", "url", "summary", "summary_method", "flags"]
-    table = pd.DataFrame(
-        [
+    table = {
+        column: [
             {
                 "title": article.get("title", ""),
-                "source": article.get("source", ""),
+                "source": pipeline.normalize_publisher(article.get("source", "")),
                 "published_at": article.get("published_at", ""),
                 "url": _safe_source_url(article.get("url")),
                 "summary": article.get("summary") or "",
                 "summary_method": article.get("summary_method", ""),
                 "flags": "; ".join(article.get("flags", [])),
-            }
+            }[column]
             for article in records
-        ],
-        columns=columns,
-    )
+        ]
+        for column in columns
+    }
     st.dataframe(
         table,
         column_config={
             "url": st.column_config.LinkColumn("URL", display_text="Open source"),
         },
         hide_index=True,
-        alt="News articles with source links and summaries",
     )
 
     st.markdown("#### Download this digest")
@@ -262,7 +263,6 @@ def _render_data_tab(result, downloads):
             data=downloads[extension],
             file_name=filename,
             mime=mime,
-            width="stretch",
             key=f"download_{extension}",
         )
     with st.expander("JSON preview"):
@@ -303,7 +303,11 @@ def _render_empty_state():
 
 def _render_result(result):
     articles = result.get("articles", [])
-    publisher_count = len(set(article.get("source") for article in articles if article.get("source")))
+    publisher_count = len({
+        pipeline.normalize_publisher(article.get("source"))
+        for article in articles
+        if article.get("source")
+    })
     funnel = result.get("funnel", {})
     discovered = sum(
         int(source_data.get("counts", {}).get("discovered", 0) or 0)
@@ -319,7 +323,7 @@ def _render_result(result):
     )
     for column, (label, value) in zip(metrics, values):
         with column:
-            st.metric(label, value, border=True)
+            st.metric(label, value)
 
     themes = pipeline.top_themes(articles, result.get("topic", ""))
     if themes:
@@ -379,7 +383,7 @@ def _render_result(result):
         _render_data_tab(result, st.session_state["downloads"])
 
 
-css_path = Path(__file__).with_name("styles.css")
+css_path = APP_DIR / "styles.css"
 st.markdown(
     f"<style>{css_path.read_text(encoding='utf-8')}</style>",
     unsafe_allow_html=True,
@@ -395,7 +399,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-topic_column, fetch_column, options_column = st.columns([6, 1.5, 1.2], vertical_alignment="bottom")
+topic_column, fetch_column, options_column = st.columns([6, 1.5, 1.2])
 with topic_column:
     st.text_input(
         "Topic",
@@ -407,11 +411,10 @@ with fetch_column:
     fetch_clicked = st.button(
         "Fetch news",
         type="primary",
-        width="stretch",
         key="fetch_news",
     )
 with options_column:
-    options_container = st.popover("Options", width="stretch") if hasattr(st, "popover") else st.expander("Options")
+    options_container = st.popover("Options") if hasattr(st, "popover") else st.expander("Options")
     with options_container:
         article_limit = st.slider("Article limit", 1, 15, 5, key="article_limit")
         recency_days = st.slider("Recency window (days)", 1, 14, 7, key="recency_days")
@@ -432,8 +435,6 @@ if hasattr(st, "pills"):
         key="suggestion",
         on_change=_queue_suggestion,
         label_visibility="collapsed",
-        width="stretch",
-        wrap=True,
     )
 else:
     st.radio(
@@ -461,14 +462,8 @@ if fetch_clicked or fetch_from_suggestion:
                 unsafe_allow_html=True,
             )
 
-            def on_progress(done, total, message):
-                nonlocal_active = 1
-                message_lower = (message or "").lower()
-                if "skip" in message_lower or "off-topic" in message_lower:
-                    nonlocal_active = 2
-                elif (message or "").lstrip().startswith("["):
-                    nonlocal_active = 3
-                progress_state["active_index"] = nonlocal_active
+            def on_progress(done, total, _message, stage="retrieve"):
+                progress_state["active_index"] = PIPELINE_STEPS.index(stage.title())
                 active_name = PIPELINE_STEPS[progress_state["active_index"]]
                 status.update(label=f"{active_name} · {done}/{total}", state="running", expanded=True)
                 pipeline_view.markdown(
@@ -507,8 +502,12 @@ if fetch_clicked or fetch_from_suggestion:
                 st.session_state.pop("run_error", None)
             except Exception as exc:
                 status.update(label="News fetch failed", state="error", expanded=True)
-                logging.getLogger("newsdigest-ui").error("News run failed: %s", exc)
-                st.session_state["run_error"] = str(exc)
+                logging.getLogger("newsdigest-ui").error(
+                    "News run failed (%s)", type(exc).__name__
+                )
+                st.session_state["run_error"] = (
+                    "Check your network connection and source availability, then try again."
+                )
 
 if st.session_state.get("run_error"):
     st.error(f"Could not complete the news fetch. {st.session_state['run_error']}")
